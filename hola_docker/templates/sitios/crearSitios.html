@@ -1,0 +1,79 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+<div class="right_col" role="main">   
+    <h1>Crear Usuario</h1>
+    <form>
+        <div class="form-group row">
+          <label for="Nombre" class="col-4 col-form-label">Nombre</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-address-card"></i>
+                </div>
+              </div> 
+              <input id="Nombre" name="Nombre" type="text" class="form-control" required="required">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Apellido" class="col-4 col-form-label">Apellido</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-address-card"></i>
+                </div>
+              </div> 
+              <input id="Apellido" name="Apellido" type="text" class="form-control" required="required">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Correo" class="col-4 col-form-label">Correo</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-at"></i>
+                </div>
+              </div> 
+              <input id="Correo" name="Correo" type="email" class="form-control" required="required">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Telefono" class="col-4 col-form-label">Telefono</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-phone"></i>
+                </div>
+              </div> 
+              <input id="Telefono" name="Telefono" type="number" class="form-control" required="required">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="f_nacim" class="col-4 col-form-label">Fecha Nacimiento</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div> 
+              <input id="f_nacim" name="f_nacim" type="date" class="form-control" required="required">
+            </div>
+          </div>
+        </div> 
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Agregar Usuario</button>
+          </div>
+        </div>
+      </form>
+</div>    
+{% endblock %}

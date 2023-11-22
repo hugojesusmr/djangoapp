@@ -1,0 +1,265 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+  <h4 class="card-title">Sitios Totales</h4>
+  {% block buscador %}
+  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="POST">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." name="buscar">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">
+            <i class="fa fa-search fa-sm"></i>
+        </button>
+
+      </div>
+    </div>
+    
+  </form>
+  {% endblock buscador %}
+  
+  <div class="table-responsive">
+    <table class="table">
+      
+      <thead>
+        <tr>
+          <th>TRACKER </th>
+          <th>ATTID </th>
+          <th>NOMBRE </th>
+          <th>IDLTE </th>
+          <th>IDROJO </th>
+          <th>IDNARANJA </th>
+          <th>IDEN </th>
+          <th>LATITUD double
+          <th>LONGITUD double
+          <th>ESTADO </th>
+          <th>MUNICIPIO </th>
+          <th>MERCADO </th>
+          <th>REGIONCELULAR double
+          <th>REGION </th>
+          <th>VENDOR </th>
+          <th>COBERTURA </th>
+          <th>TIPO </th>
+          <th>PROYECTO </th>
+          <th>CLASIFICACION </th>
+          <th>CONFIGURACION3G </th>
+          <th>CONFIGURACIONLTE </th>
+          <th>CONFIGURACION5G </th>
+          <th>IOT </th>
+          <th>TDD </th>
+          <th>TRAFICO3GLTE5G </th>
+          <th>TRAFICO3G </th>
+          <th>TRAFICO4G </th>
+          <th>TRAFICO5G </th>
+          <th>SL </th>
+          <th>CONSOLIDADO </th>
+          <th>REUBICACION </th>
+          <th>NOTAS </th>
+          <th>COMENTARIOOPERACIONES </th>
+          <th>PLAN </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B26_800 </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>COMENTARIOOPERACIONES </th>
+          <th>PLAN </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B26_800 </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>COMENTARIOOPERACIONES </th>
+          <th>PLAN </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B26_800 </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>COMENTARIOOPERACIONES </th>
+          <th>PLAN </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B26_800 </th>
+          <th>B5_850</th>
+          <th>B2_PCS</th>
+          <th>B4_AWS</th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>B7_2600</th>
+          <th>B38_2600</th>
+          <th>COMENTARIOOPERACIONES </th>
+          <th>PLAN </th>
+          <th>B5_850</th>
+          <th>B2_PCS</th>
+          <th>B4_AWS</th>
+          <th>B26_800 </th>
+          <th>B5_850 </th>
+          <th>B2_PCS </th>
+          <th>B4_AWS </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>B7_2600 </th>
+          <th>B38_2600 </th>
+          <th>COMENTARIOOPERACIONES</th>
+          <th>PLAN</th>
+          <th>B5_850</th>
+          <th>B2_PCS</th>
+          <th>B4_AWS</th>
+          <th>B26_800</th>
+          <th>B5_850</th>
+          <th>B2_PCS</th>
+          <th>B4_AWS</th>
+          <th>B7_2600</th>
+          <th>B38_2600</th>
+          <th>B7_2600</th>
+          <th>B38_2600</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+
+        {% for s in entity %}
+        <tr>
+          <td>{{s.TRACKER}} </td>
+          <td>{{s.ATTID}} </td>
+          <td>{{s.NOMBRE}} </td>
+          <td>{{s.IDLTE}} </td>
+          <td>{{s.IDROJO}} </td>
+          <td>{{s.IDNARANJA}} </td>
+          <td>{{s.IDEN}} </td>
+          <td>{{s.LATITUD}}</td>
+          <td>{{s.LONGITUD}}</td>
+          <td>{{s.ESTADO}} </td>
+          <td>{{s.MUNICIPIO}} </td>
+          <td>{{s.MERCADO}} </td>
+          <td>{{s.REGIONCELULAR}}</td>
+          <td>{{s.REGION}} </td>
+          <td>{{s.VENDOR}} </td>
+          <td>{{s.COBERTURA}} </td>
+          <td>{{s.TIPO}} </td>
+          <td>{{s.PROYECTO}} </td>
+          <td>{{s.CLASIFICACION}} </td>
+          <td>{{s.CONFIGURACION3G}} </td>
+          <td>{{s.CONFIGURACIONLTE}} </td>
+          <td>{{s.CONFIGURACION5G}} </td>
+          <td>{{s.IOT}} </td>
+          <td>{{s.TDD}} </td>
+          <td>{{s.TRAFICO3GLTE5G}} </td>
+          <td>{{s.TRAFICO3G}} </td>
+          <td>{{s.TRAFICO4G}} </td>
+          <td>{{s.TRAFICO5G}} </td>
+          <td>{{s.SL}} </td>
+          <td>{{s.CONSOLIDADO}} </td>
+          <td>{{s.REUBICACION}} </td>
+          <td>{{s.NOTAS}} </td>
+          <td>{{s.COMENTARIOOPERACIONES}} </td>
+          <td>{{s.PLAN}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B26_800}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.COMENTARIOOPERACIONES}} </td>
+          <td>{{s.PLAN}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B26_800}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.COMENTARIOOPERACIONES}} </td>
+          <td>{{s.PLAN}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B26_800}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.COMENTARIOOPERACIONES}} </td>
+          <td>{{s.PLAN}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B26_800}} </td>
+          <td>{{s.B5_850}}</td>
+          <td>{{s.B2_PCS}}</td>
+          <td>{{s.B4_AWS}}</td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.B7_2600}}</td>
+          <td>{{s.B38_2600}}</td>
+          <td>{{s.COMENTARIOOPERACIONES}} </td>
+          <td>{{s.PLAN}} </td>
+          <td>{{s.B5_850}}</td>
+          <td>{{s.B2_PCS}}</td>
+          <td>{{s.B4_AWS}}</td>
+          <td>{{s.B26_800}} </td>
+          <td>{{s.B5_850}} </td>
+          <td>{{s.B2_PCS}} </td>
+          <td>{{s.B4_AWS}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.B7_2600}} </td>
+          <td>{{s.B38_2600}} </td>
+          <td>{{s.COMENTARIOOPERACIONES}}</td>
+          <td>{{s.PLAN}}</td>
+          <td>{{s.B5_850}}</td>
+          <td>{{s.B2_PCS}}</td>
+          <td>{{s.B4_AWS}}</td>
+          <td>{{s.B26_800}}</td>
+          <td>{{s.B5_850}}</td>
+          <td>{{s.B2_PCS}}</td>
+          <td>{{s.B4_AWS}}</td>
+          <td>{{s.B7_2600}}</td>
+          <td>{{s.B38_2600}}</td>
+          <td>{{s.B7_2600}}</td>
+          <td>{{s.B38_2600}}</td>
+        </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div>
+    {% include 'sitios/paginator.html'%}
+  </div>
+</div>
+
+{% endblock%}

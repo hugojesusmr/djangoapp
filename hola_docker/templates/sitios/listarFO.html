@@ -1,0 +1,101 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Fibra Óptica</h6>
+        <div class="float-right">
+          {% block buscador %}
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." name="buscar">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search fa-sm"></i>
+                </button>
+        
+              </div>
+            </div>
+            
+          </form>
+          {% endblock buscador %}
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+      
+      <thead>
+        <tr class="">
+          <th>IDATT</th>  	
+          <th>TX</th> 	
+          <th>TXGRUPOS</th> 	
+          <th>TXDETALLE</th>
+          <th>CONTROL</th>	
+          <th>FECHA</th>
+          <th>POC</th>
+          <th>OBSERVACIONES</th> 	
+          <th>ID</th> 	
+          <th>IDATT</th> 	
+          <th>NOMBRE</th> 	
+          <th>LATITUD</th> 	
+          <th>LONGITUD</th> 	
+          <th>ESTADO</th> 	
+          <th>MUNICIPIO</th> 	
+          <th>MERCADO</th> 	
+          <th>MERCADOFO</th> 	
+          <th>REGIONCELULAR</th> 	
+          <th>AGREGADOR</th> 	
+          <th>AÑO</th> 
+          <th>PROYECTO</th> 	
+          <th>TOPOLOGÍA</th> 	
+          <th>SEGMENTOIPBH</th> 	
+          <th>STATUS</th> 	
+          <th>TX</th> 
+        </tr>
+        
+      </thead>
+      <tbody>
+
+        {% for s in entity %}
+        <tr>
+          <td>{{s.IDATT}}</td>  	
+          <td>{{s.TX}}</td> 	
+          <td>{{s.TXGRUPOS}}</td> 	
+          <td>{{s.TXDETALLE}}</td>
+          <td>{{s.CONTROL}}</td>	
+          <td>{{s.FECHA}}</td>
+          <td>{{s.POC}}</td>
+          <td>{{s.OBSERVACIONES}}</td> 	
+          <td>{{s.ID}}</td> 	
+          <td>{{s.IDATT}}</td> 	
+          <td>{{s.NOMBRE}}</td> 	
+          <td>{{s.LATITUD}}</td> 	
+          <td>{{s.LONGITUD}}</td> 	
+          <td>{{s.ESTADO}}</td> 	
+          <td>{{s.MUNICIPIO}}</td> 	
+          <td>{{s.MERCADO}}</td> 	
+          <td>{{s.MERCADOFO}}</td> 	
+          <td>{{s.REGIONCELULAR}}</td> 	
+          <td>{{s.AGREGADOR}}</td> 	
+          <td>{{s.AÑO}}</td> 
+          <td>{{s.PROYECTO}}</td> 	
+          <td>{{s.TOPOLOGÍA}}</td> 	
+          <td>{{s.SEGMENTOIPBH}}</td> 	
+          <td>{{s.STATUS}}</td> 	
+          <td>{{s.TX}}</td>
+        </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div>
+    {% include 'sitios/paginator.html'%}
+  </div>
+</div>
+
+{% endblock%}
